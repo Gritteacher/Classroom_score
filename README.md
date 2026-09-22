@@ -28,6 +28,10 @@
 
 ## Netlify
 
+- เว็บไซต์: https://classscore.grits.online
+- Netlify project: `classscore-grits`
+- Source branch: `codex/classscore`
+- การเผยแพร่ครั้งแรกใช้ Netlify CLI ยังไม่ได้เชื่อม GitHub auto-deploy การ push อย่างเดียวจะไม่อัปเดตเว็บ ให้ใช้ `npx netlify-cli deploy --prod` จากเครื่องที่เชื่อมกับไซต์ หรือเชื่อม repository ในหน้า Netlify ภายหลัง
 - Publish directory: `public`
 - Build command: `npm run build`
 - Functions directory: `netlify/functions`
