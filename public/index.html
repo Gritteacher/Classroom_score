@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#f3f7ee">
+  <meta name="description" content="ตรวจสอบคะแนนรายวิชาสังคมศึกษา 5 ด้วยรหัสนักเรียน">
+  <title>Class Score · สังคมศึกษา 5</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Class Score หน้าหลัก"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6c-3-2-6-2-9-1v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1Zm0 0v14"/></svg></span><span>class<span class="brand-light">score</span><small>พื้นที่ของทุกความพยายาม</small></span></a>
+    <span class="course-tag">สังคมศึกษา 5</span>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <span class="eyebrow">ค่อย ๆ เรียนรู้ ค่อย ๆ เติบโต</span>
+      <h1 id="page-title">มาดูผลของ<br class="mobile-break"> <span>ความพยายาม</span> กัน</h1>
+      <p>ตรวจสอบคะแนนรายวิชาสังคมศึกษา 5<br>ไม่ว่าผลจะเป็นอย่างไร ทุกก้าวของเธอมีความหมายเสมอ</p>
+    </section>
+
+    <section class="search-card" aria-label="ค้นหาคะแนน">
+      <div class="card-heading"><span class="step">01</span><span>คะแนนของฉัน</span><span class="tiny-spark" aria-hidden="true">✦</span></div>
+      <form id="search-form" novalidate>
+        <label for="student-id">รหัสนักเรียน</label>
+        <div class="input-wrap"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="8" cy="10" r="2"/><path d="M5 16c0-3 6-3 6 0m3-7h4m-4 4h4"/></svg><input id="student-id" name="studentId" type="text" inputmode="numeric" autocomplete="off" maxlength="5" placeholder="กรอกรหัสนักเรียน 5 หลัก" aria-describedby="input-help error-message" required></div>
+        <p id="input-help" class="input-help">ใช้รหัสประจำตัวนักเรียนของตนเอง</p>
+        <p id="error-message" class="error-message" role="alert" hidden></p>
+        <button class="primary-button" type="submit" id="search-button"><span>เปิดดูคะแนนของฉัน</span><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg></button>
+      </form>
+      <div class="gentle-note"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s-9-5.5-9-12a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-9 12-9 12Z"/></svg>คะแนนเป็นเพียงส่วนหนึ่งของการเรียนรู้</div>
+    </section>
+
+    <section id="loading" class="loading-card" aria-live="polite" aria-busy="true" hidden>
+      <div class="loading-orbit" aria-hidden="true"><span>✦</span></div>
+      <span class="eyebrow">หายใจเข้าลึก ๆ แล้วรออีกนิด</span>
+      <h2 id="loading-message">กำลังเปิดซองความพยายาม…</h2>
+      <p>เตรียมรอยยิ้มไว้ให้ตัวเองด้วยนะ</p>
+      <div class="loading-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    </section>
+
+    <section id="result" class="result-card" aria-labelledby="result-title" hidden>
+      <div class="result-top"><span class="eyebrow">ผลการเรียนของฉัน</span><span class="result-spark" aria-hidden="true">✦</span></div>
+      <h2 id="result-title" tabindex="-1"></h2><p id="result-id" class="result-id"></p>
+      <div class="score-summary"><div><span class="score-label">คะแนนรวม</span><div class="score-number" id="total-score"></div><span class="score-unit">คะแนน</span></div><div class="grade-block"><span class="score-label">เกรดที่ได้</span><strong id="grade"></strong></div></div>
+      <div class="score-details"><h3>เก็บเกี่ยวมาทีละนิด</h3><div><span>ก่อนกลางภาค</span><strong id="before-score"></strong></div><div><span>หลังกลางภาค</span><strong id="after-score"></strong></div><div><span>สอบปลายภาค</span><strong id="final-score"></strong></div></div>
+      <p id="absence-note" class="absence-note" hidden>มีรายการขาดสอบ หากต้องการตรวจสอบหรือนัดหมายสอบเพิ่มเติม กรุณาติดต่อครูผู้สอน</p>
+      <div class="encouragement"><span class="quote-mark" aria-hidden="true">“</span><div><h3 id="quote-title"></h3><p id="quote-body"></p></div></div>
+      <button id="reset-button" type="button" class="reset-button">ปิดผลคะแนนและกลับหน้าค้นหา <span aria-hidden="true">↗</span></button>
+      <p class="source-note">คะแนนและเกรดตามข้อมูลของครูผู้สอน</p>
+    </section>
+
+    <aside class="bottom-note"><span aria-hidden="true">✳</span><p>เก่งมากแล้วที่ตั้งใจมาถึงตรงนี้<br><strong>พรุ่งนี้ยังมีโอกาสให้เติบโตอีกเสมอ</strong></p></aside>
+    <noscript><p class="error-message">กรุณาเปิด JavaScript ในเบราว์เซอร์เพื่อค้นหาคะแนน</p></noscript>
+  </main>
+  <footer><span>CLASS SCORE</span><span>สังคมศึกษา 5 · เรียนรู้ไปด้วยกัน</span></footer>
+</body>
+</html>

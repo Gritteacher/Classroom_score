@@ -1,0 +1,13 @@
+{
+  "name": "classroom-score",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env scripts/dev.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "build": "node scripts/check.mjs",
+    "import": "node --env-file-if-exists=.env scripts/import.mjs"
+  }
+}
